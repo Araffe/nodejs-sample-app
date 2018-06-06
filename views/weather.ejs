@@ -1,0 +1,24 @@
+<%- include('header.ejs') %>
+
+<br/>
+<br/>
+
+<div class="jumbotron">
+        <h1 class="display-3">
+          <img src='/images/weather.png' height='90px' /> How's the weather?</h1>
+          <hr/>
+        <br/>
+         <p class="lead">Based on your IP address (<%= ipAddress %>), it looks like you are in <%= city %>, <%= country %>.</p>
+        <br/>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">The weather in <%= city %> is <%= summary %>. It's currently <%= temp %> degrees.</h5>
+            </div>
+              <p class="mb-1">The forecast for the next few days is: <%= dailySummary %></p>
+          </a>
+        </div>
+      </div>
+
+
+<%- include('footer.ejs') %>

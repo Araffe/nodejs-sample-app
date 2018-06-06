@@ -1,0 +1,40 @@
+<%- include('header.ejs') %>
+
+<br/>
+<br/>
+
+<div class="jumbotron">
+        <h1 class="display-3">
+          <img src='/images/world.png' height='90px' /> What's around me?</h1>
+          <hr/>
+        <br/>
+         <p class="lead">Based on your IP address (<%= ipAddress %>), it looks like you are in <%= city %>, <%= country %>.</p>
+        <br/>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">Let's check out some places to eat in <%= city %>:</h5>
+            </div>
+            <br/>
+            <p class="mb-1">You could try <strong><%= JSON.stringify(restaurants[0].name).replace(/['"]+/g, '') %></strong> - this is located at <%= JSON.stringify(restaurants[0].location).replace(/['"]+/g, '') %>. </p>
+            <p class="mb-1">Or how about <strong><%= JSON.stringify(restaurants[1].name).replace(/['"]+/g, '') %></strong> - you'll find this at <%= JSON.stringify(restaurants[1].location).replace(/['"]+/g, '') %>.</p>
+            <p class="mb-1">Finally, you could try <strong><%= JSON.stringify(restaurants[2].name).replace(/['"]+/g, '') %></strong> - this one is at <%= JSON.stringify(restaurants[2].location).replace(/['"]+/g, '') %>.</p>
+          </a>
+        </div>
+        <br/>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
+            <div class="d-flex w-100 justify-content-between">
+              <h5 class="mb-1">There are also some shopping malls nearby:</h5>
+            </div>
+            <br/>
+            <p class="mb-1">Shop 'til you drop at <strong><%= JSON.stringify(shoppingMalls[0].name).replace(/['"]+/g, '') %></strong> - you'll find this at <%= JSON.stringify(shoppingMalls[0].location).replace(/['"]+/g, '') %>. </p>
+            <p class="mb-1">Or alternatively, <strong><%= JSON.stringify(shoppingMalls[1].name).replace(/['"]+/g, '') %></strong> which you can find at <%= JSON.stringify(shoppingMalls[1].location).replace(/['"]+/g, '') %>.</p>
+          </a>
+        </div>
+
+
+      </div>
+
+
+<%- include('footer.ejs') %>
